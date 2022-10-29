@@ -1,8 +1,10 @@
 const qrcode = require("qrcode-terminal");
 const csvtojson = require("csvtojson");
-const { Client } = require("whatsapp-web.js");
+const { Client, LocalAuth } = require("whatsapp-web.js");
 const { MessageMedia } = require("whatsapp-web.js");
-const client = new Client();
+const client = new Client({
+  authStrategy: new LocalAuth()
+});
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
