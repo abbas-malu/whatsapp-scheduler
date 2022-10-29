@@ -17,12 +17,9 @@ let msg;
 let wait_time = "";
 let rcpnt = "";
 let set_rcpnt = "";
-let msg_string = '';
-let msg_json = '';
+let msg_string = "";
+let msg_json = "";
 client.on("message", (message) => {
-
-
-
   if (message.body.includes("@json@")) {
     msg_string = message.body.replace("@json@", "");
     msg_json = JSON.parse(msg_string);
@@ -30,13 +27,8 @@ client.on("message", (message) => {
       await sleep(msg_json["wait_time"] * 1000);
       client.sendMessage(`91${msg_json["rec"]}@c.us`, msg_json["msg"]);
     };
-    jSend()
+    jSend();
   }
-
-
-
-
-
 
   if (message.body.includes("@msg@")) {
     msg = message.body.replace("@msg@", "");
@@ -62,7 +54,7 @@ client.on("message", (message) => {
       wait_time = "";
       rcpnt = "";
     };
-    send()
+    send();
   }
 
   if (message.body.includes("@sset@")) {
@@ -72,9 +64,7 @@ client.on("message", (message) => {
       msg = "";
       wait_time = "";
     };
-    rSend()
+    rSend();
   }
 });
 client.initialize();
-
-

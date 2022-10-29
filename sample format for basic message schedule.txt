@@ -1,0 +1,24 @@
+sample format for basic message schedule
+{
+    "msg": "hey abbas",
+    "wait_time": 15,
+    "rec": "6264582721"
+}
+
+sample format for loop message schedule with fixed wait time
+{
+    "msg": "hey abbas",
+    "start_time": 15,
+    "rec": "6264582721",
+    "loop_count":10,
+    "loop_wait_time":50
+}
+
+sample format for loop message schedule with random wait time
+{
+  "msg": "hey abbas",
+  "start_time": 15,
+  "rec": "6264582721",
+  "loop_count":10,
+  "loop_wait_time": [10,20]
+}
