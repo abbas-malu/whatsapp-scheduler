@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.js"></script>
+  </head>
+  <body>
+    <h1>ABBAS MALU</h1>
+    <p id="qrDiv">{{qr}}</p>
+    <canvas id="qr"></canvas>
+    <script type="text/javascript">
+
+      (function() {
+        var qr = new QRious({
+          element: document.getElementById('qr'),
+          value: document.getElementById('qrDiv').innerHTML,
+          size: 500
+        });
+      })();
+
+    </script>
+  </body>
+</html>
